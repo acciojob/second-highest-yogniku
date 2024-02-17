@@ -10,9 +10,21 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			
+			if (arr.length <= 1 || new Set(arr).size === 1) {
+        return -Infinity;
+    }
+    
+    // Sort the array in descending order
+    arr.sort((a, b) => b - a);
+    
+    // Return the second element if it exists
+    return arr[1];
 		}
-
+console.log(secondHighest([5, 1, 2, 3, 4])); 
+console.log(secondHighest([-1, -2, -3, -4, -5])); 
+console.log(secondHighest([])); 
+console.log(secondHighest([1])); 
+console.log(secondHighest([1, 1, 1, 1, 1])); 
 		function Main() {
 			var n = prompt("Enter the number of elements");
 			var arr = [];
